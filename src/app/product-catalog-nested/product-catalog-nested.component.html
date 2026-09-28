@@ -1,0 +1,61 @@
+<p>product-catalog-nested works!</p>
+
+
+
+<div *ngFor="let category of categories">
+
+  <table border="1">
+
+    <tr>
+
+      <td>Ma Danh Muc</td>
+
+      <td>Ten Danh Muc</td>
+
+    </tr>
+
+    <tr>
+
+      <td>{{ category.Cateid }}</td>
+
+      <td>{{ category.CateName }}</td>
+
+    </tr>
+
+  </table>
+
+
+
+  <table border="1">
+
+    <tr>
+
+      <td>Ma San Pham</td>
+
+      <td>Ten San Pham</td>
+
+      <td>Gia San Pham</td>
+
+      <td>Picture</td>
+
+    </tr>
+
+    <tr *ngFor="let p of category.Products">
+
+      <td>{{ p.ProductId }}</td>
+
+      <td>{{ p.ProductName }}</td>
+
+      <td>{{ p.Price }}</td>
+
+      <td><img [src]="p.Image" alt="" /></td>
+
+    </tr>
+
+  </table>
+
+  <br />
+
+</div>
+
+

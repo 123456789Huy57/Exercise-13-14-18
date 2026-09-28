@@ -1,0 +1,19 @@
+.error-message {
+  white-space: pre-line;
+  color: #b42318;
+  background: #fef3f2;
+  border: 1px solid #fecdca;
+  padding: 12px;
+  margin: 12px 0;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border: 1px solid #777;
+  padding: 8px 12px;
+  text-align: left;
+}

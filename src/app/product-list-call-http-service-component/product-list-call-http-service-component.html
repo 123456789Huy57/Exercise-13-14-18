@@ -1,0 +1,33 @@
+<p>product-list-call-http-service-component works!</p>
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (product of products(); track product.id) {
+            @if (product.price < 0) {
+                <tr class="negative-price">
+                    <td>{{product.id}}</td>
+                    <td>{{product.name}}</td>
+                    <td>{{product.price}}</td>
+                    <td>
+                        <img class="product-image" [src]="product.image_link" [alt]="product.name">
+                    </td>
+                </tr>
+            } @else {
+                <tr>
+                    <td>{{product.id}}</td>
+                    <td>{{product.name}}</td>
+                    <td>{{product.price}}</td>
+                    <td>
+                        <img class="product-image" [src]="product.image_link" [alt]="product.name">
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

@@ -1,0 +1,30 @@
+<p>binding-style-component works!</p>
+
+<label class="percentage-control" for="system-percentage">
+  System percentage: {{ progressValue }}%
+  <input
+    id="system-percentage"
+    type="range"
+    min="0"
+    max="100"
+    [value]="progressValue"
+    (input)="setProgress($any($event.target).value)"
+  >
+</label>
+
+<div
+  class="progress-bar-container"
+  role="progressbar"
+  aria-label="System percentage"
+  [attr.aria-valuenow]="progressValue"
+  aria-valuemin="0"
+  aria-valuemax="100"
+>
+  <div
+    class="progress-bar"
+    [style.width.%]="progressValue"
+    [style.backgroundColor]="progressColor"
+  ></div>
+</div>
+
+<p [style.color]="statusColor">System status: Running</p>

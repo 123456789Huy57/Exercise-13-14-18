@@ -1,0 +1,29 @@
+<p>group-customers-http works!</p>
+
+<table border="1">
+  <tr>
+    <td>Id</td>
+    <td>Name</td>
+    <td>Email</td>
+    <td>Age</td>
+    <td>#</td>
+  </tr>
+  @for (group of groups(); track group.CustomerTypeId) {
+    <tbody>
+      <tr>
+        <td colspan="5">
+          {{ group.CustomerTypeId }} - {{ group.CustomterTypeName }}
+        </td>
+      </tr>
+      @for (c of group.Customers; track c.Id) {
+        <tr>
+          <td>{{ c.Id }}</td>
+          <td>{{ c.Name }}</td>
+          <td>{{ c.Email }}</td>
+          <td>{{ c.Age }}</td>
+          <td><img [src]="'/' + c.Image" alt="" /></td>
+        </tr>
+      }
+    </tbody>
+  }
+</table>

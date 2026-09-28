@@ -1,0 +1,30 @@
+<p>product-list-component works!</p>
+min_price: <input type="number" [(ngModel)]="min_price" />
+max_price: <input type="number" [(ngModel)]="max_price" />
+<button (click)="callFilterProductListByPrice()">Filter Productss</button>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>IMAGE</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (product of products; track product.id){
+        <tr [class]="{'invalid_product':product.price<0}">
+            <td>{{ product.id }}</td>
+            <td>{{ product.name }}</td>
+            <td>{{ product.price }}</td>
+            <td>
+                <img [src]="product.image_link" height="100" width="100"/>
+            </td>
+        </tr>
+    } @empty {
+        <tr>
+            <td colspan="3">Not Found</td>
+        </tr>
+    }
+    </tbody>
+</table>
